@@ -13,12 +13,13 @@
     $$P_g = \lim_{T\to \infty} \frac{1}{T} \int_{\frac{T}{2}}^{\frac{T}{2}} |g(t)|^2 \: \text{d}t$$
     Because $g(t)$ is periodic, averaging $g^2(t)$ over an infinitely large interval is identical to averaging over one period $T_0 = \frac{2\pi}{\omega_0}$.
     $$P_g = \frac{1}{T_0} \int_{0}^{T_0} A^2\cos^2(\omega_0 t + \theta) + 2AB\cos(\omega_0 t + \theta) + B^2 \: \text{d}t$$
-    From <a href="topics/power-sinusoid.html">Power of sinusoid</a> we already know that $\frac{1}{T_0} \int_{0}^{T_0} A^2\cos^2(\omega_0 t + \theta) = \frac{A^2}{2}$ and that $\frac{1}{T_0} \int_{0}^{T_0} 2AB\cos(\omega_0 t + \theta) \: \text{d}t = 0$.
+    From <a href="topics/power-sinusoid.html">Power of sinusoid</a> we already know that $\frac{1}{T_0} \int_{0}^{T_0} A^2\cos^2(\omega_0 t + \theta) \: \text{d}t = \frac{A^2}{2}$ and that $\frac{1}{T_0} \int_{0}^{T_0} 2AB\cos(\omega_0 t + \theta) \: \text{d}t = 0$.
     Thus,
     $$\begin{align} P_g &= \frac{A^2}{2} + \frac{1}{T_0}\int_{0}^{T_0} B^2 \: \text{d}t \\\\ 
     &= \frac{A^2}{2} + B^2 \end{align}$$
-    Thus, the power of a sinusoid is just the half the amplitude squared plus the offset squared. The phase shift $\theta$ has no effect.
+    Thus, the power of a sinusoid is half the amplitude squared plus the offset squared. The phase shift $\theta$ has no effect.
     $$\boxed{P_g = \frac{A^2}{2} + B^2}$$
+    The addition of $B^2$ to the power of $g(t)$ is not unique to sinusoids. In general, adding a DC offset $B$ to a signal adds $B^2$ to the power of the signal.
 </p>
 <p><a href="../index.html">← Back</a></p>
 </body></html>
