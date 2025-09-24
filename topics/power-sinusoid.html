@@ -13,10 +13,17 @@
     $$P_g = \lim_{T\to \infty} \frac{1}{T} \int_{\frac{T}{2}}^{\frac{T}{2}} |g(t)|^2 \: \text{d}t$$
     Averaging $g^2(t)$ over an infinitely large interval is identical to averaging over one period $T_0 = \frac{2\pi}{\omega_0}$.
     $$P_g = \frac{1}{T_0} \int_{0}^{T_0} A^2\cos^2(\omega_0 t + \theta) \: \text{d}t$$
-    Using the trig identity $\cos^2 x = \frac{1 + \cos(2x)}{2}$ gives
-    $$P_g = \frac{A^2}{2T_0} \int_{0}^{T_0} 1 + \cos(2\omega_0 t + 2\theta) \: \text{d}t$$
-    The integral of the constant 1 is simply $T_0$, and the integral of the cosine is zero since it completes an integer number of periods over $[0,T_0]$.
-    $$P_g = \frac{A^2}{2T_0} \cdot T_0 = \frac{A^2}{2}$$
+    Using the identity $\cos^2 x = \frac{1 + \cos(2x)}{2}$ gives
+    $$\begin{align}P_g &= \frac{A^2}{2T_0} \int_{0}^{T_0} 1 + \cos(2\omega_0 t + 2\theta) \: \text{d}t \\\\
+    &= \frac{A^2}{2T_0} \left( \int_{0}^{T_0} 1 \: \text{d}t + \int_{0}^{T_0} \cos(2\omega_0 t + 2\theta) \: \text{d}t \right) \\\\
+    &= \frac{A^2}{2T_0} \left( [t]_0^{T_0} + \frac{1}{2\omega_0}[\sin(2\omega_0 t + 2\theta)]_0^{\frac{2\pi}{\omega_0}} \right) \\\\
+    &= \frac{A^2}{2T_0} \left( T_0 + \frac{1}{2\omega_0} [\sin(2\omega_0 \cdot \frac{2\pi}{\omega_0} + 2\theta) - \sin(2\theta)] \right) \\\\
+    &= \frac{A^2}{2T_0} \left( T_0 + \frac{1}{2\omega_0} [\sin(4\pi + 2\theta) - \sin(2\theta)] \right) \\\\
+    &= \frac{A^2}{2T_0} \left( T_0 + \frac{1}{2\omega_0} [\sin(2\theta) - \sin(2\theta)] \right) \\\\
+    &= \frac{A^2}{2T_0} \left( T_0 + 0 \right) \\\\
+    &= \frac{A^2}{2T_0}T_0 \\\\
+    &= \frac{A^2}{2}
+    \end{align}$$
     Thus, the power of a sinusoid is half its amplitude squared:
     $$\boxed{P_g = \frac{A^2}{2}}$$
     Notice that the phase shift $\theta$ does not affect the power.
