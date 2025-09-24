@@ -7,9 +7,19 @@
 <script defer src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js"></script>
 <style>body{max-width:800px;margin:2rem auto;padding:0 1rem;font:16px/1.6 system-ui,sans-serif}</style>
 </head><body>
-<h1>Power of $g(t) = \cos(\omega t + \theta)$</h1>
-<p>General formula for signal power 
+<h1>Power of $g(t) = A\cos(\omega_0 t + \theta)$</h1>
+<p>
+    General formula for power of a real signal
     $$P_g = \lim_{T\to \infty} \frac{1}{T} \int_{\frac{T}{2}}^{\frac{T}{2}} |g(t)|^2 \: \text{d}t$$
+    Averaging $g^2(t)$ over an infinitely large interval is identical to averaging over one period $T_0 = \frac{2\pi}{\omega_0}$.
+    $$P_g = \frac{1}{T_0} \int_{0}^{T_0} A^2\cos^2(\omega_0 t + \theta) \: \text{d}t$$
+    Using the trig identity $\cos^2 x = \frac{1 + \cos(2x)}{2}$ gives
+    $$P_g = \frac{A^2}{2T_0} \int_{0}^{T_0} 1 + \cos(2\omega_0 t + 2\theta) \: \text{d}t$$
+    The integral of the constant 1 is simply $T_0$, and the integral of the cosine is zero since it completes an integer number of periods over $[0,T_0]$.
+    $$P_g = \frac{A^2}{2T_0} \cdot T_0 = \frac{A^2}{2}$$
+    Thus, the power of a sinusoid is half its amplitude squared:
+    $$\boxed{P_g = \frac{A^2}{2}}$$
+    Notice that the phase shift $\theta$ does not affect the power.
 </p>
 <p><a href="../index.html">← Back</a></p>
 </body></html>
