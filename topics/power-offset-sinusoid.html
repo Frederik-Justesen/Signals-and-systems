@@ -15,15 +15,15 @@
     $$P_g = \frac{1}{T_0} \int_{0}^{T_0} A^2\cos^2(\omega_0 t + \theta) + 2AB\cos(\omega_0 t + \theta) + B^2 \: \text{d}t$$
     Using the identity $\cos^2 x = \frac{1 + \cos(2x)}{2}$ gives
     $$\begin{align}P_g &= \frac{1}{T_0} \int_{0}^{T_0} \frac{A^2}{2} (1 + \cos(2\omega_0 t + 2\theta)) + 2AB\cos(\omega_0 t + \theta) + B^2 \: \text{d}t \\\\
-    &= \frac{1}{T_0} \left( \int_{0}^{T_0} \frac{A^2}{2} \: \text{d}t + \int_{0}^{T_0} \frac{A^2}{2} \cos(2\omega_0 t + 2\theta) \: \text{d}t + \int_{0}^{T_0} 2AB\cos(\omega_0 t + \theta) \: \text{d}t + \int_{0}^{T_0} B^2 \: \text{d}t \right) \\\\
-    &= \frac{1}{T_0} \left( \frac{A^2}{2} \Big[t\Big]_0^{T_0} + \frac{A^2}{2} \cdot \frac{1}{2\omega_0} \Big[\sin(2\omega_0 t + 2\theta)\Big]_0^{\frac{2\pi}{\omega_0}} + 2AB \cdot \frac{1}{\omega_0} \Big[\sin(\omega_0 t + \theta)\Big]_0^{\frac{2\pi}{\omega_0}} + B^2 \Big[t\Big]_0^{T_0} \right) \\\\
-    &= \frac{1}{T_0} \left( \frac{A^2}{2} T_0 + \frac{A^2}{2} \cdot \frac{1}{2\omega_0} \Big[\sin(2\omega_0 \frac{2\pi}{\omega_0} + 2\theta) - \sin(2\theta)\Big] + 2AB \cdot \frac{1}{\omega_0} \Big[\sin(\omega_0 \frac{2\pi}{\omega_0} + \theta) - \sin(\theta)\Big] + B^2 T_0 \right) \\\\
-    &= \frac{1}{T_0} \left( \frac{A^2}{2} T_0 + \frac{A^2}{2} \cdot \frac{1}{2\omega_0} \Big[\sin(4\pi + 2\theta) - \sin(2\theta)\Big] + 2AB \cdot \frac{1}{\omega_0} \Big[\sin(2\pi + \theta) - \sin(\theta)\Big] + B^2 T_0 \right) \\\\
-    &= \frac{1}{T_0} \left( \frac{A^2}{2} T_0 + \frac{A^2}{2} \cdot \frac{1}{2\omega_0} \Big[\sin(2\theta) - \sin(2\theta)\Big] + 2AB \cdot \frac{1}{\omega_0} \Big[\sin(\theta) - \sin(\theta)\Big] + B^2 T_0 \right) \\\\
-    &= \frac{1}{T_0} \left( \frac{A^2}{2} T_0 + 0 + 0 + B^2 T_0 \right) \\\\
-    &= \frac{1}{T_0} \left( \left(\frac{A^2}{2} + B^2\right) T_0 \right) \\\\
-    &= \frac{A^2}{2} + B^2
-    \end{align}$$
+    &= \frac{1}{T_0} \left( \int_{0}^{T_0} \frac{A^2}{2} \: \text{d}t + \int_{0}^{T_0} \frac{A^2}{2} \cos(2\omega_0 t + 2\theta) \: \text{d}t + \int_{0}^{T_0} 2AB\cos(\omega_0 t + \theta) \: \text{d}t + \int_{0}^{T_0} B^2 \: \text{d}t \right) \\\\ \end{align}$$
+    From <li><a href="topics/power-sinusoid.html">Power of sinusoid</a></li> we already know that 
+    $$\begin{align} \int_{0}^{T_0} \frac{A^2}{2} \cos(2\omega_0 t + 2\theta) \: \text{d}t &= 0 \\\\
+    \int_{0}^{T_0} 2AB\cos(\omega_0 t + \theta) \: \text{d}t &=0
+    end{align} $$
+
+     $$\begin{align}P_g &= \frac{1}{T_0} \int_{0}^{T_0} \frac{A^2}{2} (1 + \cos(2\omega_0 t + 2\theta)) + 2AB\cos(\omega_0 t + \theta) + B^2 \: \text{d}t \\\\
+     &= 0
+     \end{align}$$
     Thus, the power of a sinusoid with offset is the sum of the power of the sinusoid and the power of the offset:
     $$\boxed{P_g = \frac{A^2}{2} + B^2}$$
     Notice that the phase shift $\theta$ does not affect the power.
