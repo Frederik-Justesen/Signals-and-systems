@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>My Math Notes</title>
+
+  <!-- MathJax config: $...$ for inline, $$...$$ for display -->
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$','$$'], ['\\[','\\]']]
+      }
+    };
+  </script>
+  <script id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  <style>
+    body { max-width: 800px; margin: 2rem auto; padding: 0 1rem; font: 16px/1.6 system-ui, sans-serif; }
+    h1,h2 { line-height: 1.2; }
+    nav a { margin-right: .75rem; }
+    .card { padding: 1rem; border: 1px solid #ddd; border-radius: .75rem; margin: 1rem 0; }
+    code { background: #f6f6f6; padding: .1rem .3rem; border-radius: .3rem; }
+  </style>
+</head>
+<body>
+  <h1>My Math Calculations</h1>
+  <p>Inline math example: $e^{i\\pi}+1=0$.</p>
+  <p>Display math:</p>
+  $$\\int_0^\\infty x^{n} e^{-x} \\, dx = n!$$
+
+  <nav>
+    <a href="#algebra">Algebra</a>
+    <a href="#calculus">Calculus</a>
+    <a href="#probability">Probability</a>
+  </nav>
+
+  <section id="algebra" class="card">
+    <h2>Algebra</h2>
+    <p>Quadratic formula: $$x=\\frac{-b\\pm\\sqrt{b^2-4ac}}{2a}$$</p>
+  </section>
+
+  <section id="calculus" class="card">
+    <h2>Calculus</h2>
+    <p>Derivative rule: $$\\frac{d}{dx}x^n = nx^{n-1}$$</p>
+  </section>
+
+  <section id="probability" class="card">
+    <h2>Probability</h2>
+    <p>Normal PDF: $$f(x)=\\frac{1}{\\sqrt{2\\pi\\sigma^2}}\\exp\\left(-\\frac{(x-\\mu)^2}{2\\sigma^2}\\right)$$</p>
+  </section>
+</body>
+</html>
