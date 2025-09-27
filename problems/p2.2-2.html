@@ -9,12 +9,38 @@
 </head><body>
 <h1>Problem 2.1-2</h1>
 <p>
-$\textbf{Question}$: Determine the energy of these signals. Comment on the effect of sign change, time shift and amplitude doubling. What is the effect of scaling the amplitude by $k$?
+$\textbf{Question}$: Determine the energy of these signals, that are equal to $0$ outside their intervals. Comment on the effect of sign change, time shift and amplitude doubling. What is the effect of scaling the amplitude by $k$?
 $$\begin{align} a(t) &= \sin(t) \quad 0 \leq t \leq 2\pi \\\\ 
 b(t) &= -\sin(t) \quad 0 \leq t \leq 2\pi \\\\ 
 c(t) &= \sin(t) \quad 2\pi \leq t \leq 4\pi \\\\
 d(t) &= 2\sin(t) \quad 0 \leq t \leq 2\pi \\\\
 \end{align}$$
+</p>
+<p>
+$\textbf{Answer}:$
+First, it is appropriate to determine the antiderivative of $\sin^2(t)$. Recall the identity $\sin^2(t) = \frac{1}{2}\big[1-\cos(2t) \big]$. Thus,
+$$\int \sin^2(t) \: \text{d}t = \frac{1}{2}\int 1 - \cos(2t) \: \text{d}t = \frac{1}{2}t - \frac{1}{4}\sin(2t) $$
+
+It is also appropriate to note that $\sin(m\pi) = 0 \: \forall \: m \in \mathbb{Z}$.
+</p>>
+<p>
+For $a(t)$ we have
+$$E_a = \int_{0}^{2\pi} \sin^2(t) \: \text{d}t = \Big[ \frac{1}{2}t - \frac{1}{4}\sin(2t) \Big]_0^{2\pi} = \Big(\pi - \frac{1}{4}\sin(4\pi) \Big) - \Big(0 - \frac{1}{4}\sin(0)\Big) = \pi$$
+
+For $b(t)$ we have
+$$E_b = \int_0^{2\pi} \Big(-\sin(t)\Big)^2 \: \text{d}t = \int_{0}^{2\pi} \sin^2(t) \: \text{d}t = E_a = \pi$$
+
+For $c(t)$ we have
+$$\begin{align}E_c &= \int_{2\pi}^{4\pi} \sin^2(t) \: \text{d}t = \Big[ \frac{1}{2}t - \frac{1}{4}\sin(2t) \Big]_{2\pi}^{4\pi} \\\\
+ &= \Big(2\pi - \frac{1}{4}\sin(8\pi) \Big) - \Big(\pi - \frac{1}{4}\sin(4\pi)\Big) = 2\pi - \pi = \pi \end{align}$$
+
+For $d(t)$ we have
+
+$$E_d = \int_{0}^{2\pi} \Big(2\sin(t)\Big)^2  \: \text{d}t = 4\int_{0}^{2\pi} \sin^2(t) \: \text{d}t = 4E_a = 4\pi$$
+</p>
+<p>
+$\textbf{Comments}$: Changing the sign does not change the energy (we are squaring the function anyway). Time-shifting a periodic function by its period (in this case $2\pi$ seconds) does not affect the energy. Doubling the signal amplitude quadruples the signal energy. In general, scaling the amplitude by $k$ scales the energy by $k^2$.
+
 </p>
 
 <p><a href="../index.html">← Back</a></p>
