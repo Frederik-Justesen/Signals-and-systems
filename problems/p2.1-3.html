@@ -9,7 +9,24 @@
 </head><body>
 <h1>Problem 2.1-3</h1>
 <p>
-      <img src="../figures/fig2.1-3.png" alt="fig2.1-3">
+    $\textbf{Question}:$ Find the average power of the signals in Fig. 2.1-3.
+</p>
+<p>
+    <figure>
+        <img src="../figures/fig2.1-3.png" alt="fig2.1-3">
+        <figcaption>Taken from Lathi's "Modern digital and analog communication systems" 5th ed.</figcaption>
+    </figure>
+</p>
+<p>
+$\textbf{Answer}:$ For $\phi(t)$, we notice that it is a periodic signal and that averaging from $-\infty$ to $\infty$ yields the same as averaging over one period, hence
+
+$$\begin{align}P_\phi &= \frac{1}{\pi}\int_{0}^{\pi}(e^{-t})^2 \: \text{d}t = \frac{1}{\pi}\int_{0}^{\pi}e^{-2t} \: \text{d}t \\\\
+&= -\frac{1}{2\pi}\Big[ e^{-2t} \Big]_0^\pi = -\frac{1}{2\pi}(e^{-2}-e^0) \\\\
+&= \frac{1-e^{-2\pi}}{2\pi} \approx 0.159\end{align}$$
+
+For $w_0(t)$, we recall that the sign of the signal has no influence on the power. Hence, the alternation between $-1$ and $1$ yields the same power as if the signal was constant $1$. Therefore,
+
+$$P_{w_o} = \frac{1}{T_0}\int_{0}^{T_0}w_0^2(t) \: \text{d}t = \frac{1}{T_0}\int_{0}^{T_0} \: \text{d}t = \frac{1}{T_0} T_0 = 1$$
 </p>
 
 <p><a href="../index.html">← Back</a></p>
