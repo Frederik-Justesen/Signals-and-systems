@@ -1,0 +1,31 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8">
+<title>Power of sinusoid with offset</title>
+<script>
+  MathJax = { tex:{inlineMath:[['$','$'],['\\(','\\)']], displayMath:[['$$','$$'],['\\[','\\]']]}};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js"></script>
+<style>body{max-width:660px;margin:2rem auto;padding:0 1rem;font:16px/1.6 system-ui,sans-serif}</style>
+</head><body>
+<h1>Problem 2.2-1</h1>
+<p>
+$\textbf{Question}$: Show whether the step function $u(t)$ is a power signal or an energy signal.
+
+$\textbf{Answer}$: A signal $g(t)$ is an energy signal if 
+$$\int_{-\infty}^{\infty}g^2(t) \: \text{d}t <\infty \tag1$$
+and a power signal if
+$$\lim_{T\to \infty} \frac{1}{T} \int_{-\frac{T}{2}}^{\frac{T}{2}}g^2(t) \: \text{d}t <\infty \tag2$$
+
+We first check if $(1)$ is satisfied.
+$$E_g = \int_{-\infty}^{\infty}u^2(t) \: \text{d}t = \int_{0}^{
+\infty} \: \text{d}t = \Big[ t \Big]^\infty_0 \nless \infty \quad \text{not energy signal}$$
+
+We then check if $(2)$ is satisifed.
+
+$$\begin{align}P_g &= \lim_{T\to \infty} \frac{1}{T} \int_{-\frac{T}{2}}^{\frac{T}{2}}u^2(t) \: \text{d}t \\\\
+& = \lim_{T\to \infty} \frac{1}{T} \Big[ t \Big]^{\frac{T}{2}}_{-\frac{T}{2}} = \lim_{T\to \infty} \frac{1}{T} \cdot T = 1\end{align}$$
+
+A step function is a power signal with power equal to $1$.
+</p>
+<p><a href="../index.html">← Back</a></p>
+</body></html>
