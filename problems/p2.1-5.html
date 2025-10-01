@@ -1,0 +1,37 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8">
+<title>Problem 2.1-5</title>
+<script>
+  MathJax = { tex:{inlineMath:[['$','$'],['\\(','\\)']], displayMath:[['$$','$$'],['\\[','\\]']]}};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js"></script>
+<style>body{max-width:800px;margin:2rem auto;padding:0 1rem;font:16px/1.6 system-ui,sans-serif}</style>
+</head>
+<body>
+<h1>Problem 2.1-5</h1>
+<p>
+    $\textbf{Question}:\\$ Determine the power of the signal $g(t)$. Also find the power and rms values of $(\textbf{a}) \: -g(t)$, $(\textbf{b}) \: 1.5g(t)$, $(\textbf{c}) \: g(-t)$, and $(\textbf{d}) \: g(1.5t)$.
+</p>
+<p>
+    <figure>
+        <img src="../figures/fig2.1-5.png" alt="fig2.1-5">
+        <figcaption>Figure taken from Lathi's "Modern digital and analog communication systems" 5th ed.</figcaption>
+    </figure>
+</p>
+
+<p>
+    $\textbf{Answer}:\\$
+    Because $g(t)$ is periodic with period $T=4$ we need only consider the interval $0$ to $4$ to find the average power. Moreover, because the function is squared in the power calculation process,
+    we need not worry about the sign of $g(t)$. This means we can mirror the negative part of $g(t)$ in the x-axis and get the same result as if we hadn't.
+    <figure>
+        <img src="../figures/fig2.1-5_1.png" alt="fig2.1-5_1">
+    </figure>
+</p>
+<p>
+    The mirrored version is clearly an even function (assuming period of $4$), hence the power of $g(t)$ becomes
+    $$ \begin{align}P_g &= \frac{1}{4} \int_0^4 g^2(t) \: \text{d}t = \frac{1}{4} 2\int_0^2 \big(t^3\big)^2 \: \text{d}t \\\\ 
+    &= \frac{2^7}{2\cdot 7} = \frac{64}{7}\end{align}$$
+</p>
+<p><a href="../index.html">← Back</a></p>
+</body>
+</html>
