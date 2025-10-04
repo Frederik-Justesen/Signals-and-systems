@@ -1,0 +1,38 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8">
+<title>Problem 2.1-6</title>
+<script>
+  MathJax = { tex:{inlineMath:[['$','$'],['\\(','\\)']], displayMath:[['$$','$$'],['\\[','\\]']]}};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js"></script>
+<style>body{max-width:800px;margin:2rem auto;padding:0 1rem;font:16px/1.6 system-ui,sans-serif}</style>
+</head>
+<body>
+<h1>Problem 2.1-6</h1>
+<p>
+    $\textbf{Question}:\\$ Find the power of a sinusoid $C\cos(\omega_0 t + \theta) $ by averaging the signal energy over one period $\frac{2\pi}{\omega_0}$ 
+    (rather than averaging over the infinitely large interval).
+</p>
+
+<p>
+    $\textbf{Answer}:\\$
+    To find the power of $g(t) = C\cos(\omega_0 t + \theta)$ we first find the energy. We note that $$g^2(t) = C^2\cos^2(\omega_0 t + \theta) = \frac{C^2}{2}\Big(1+\cos(2\omega_0 t + 2\theta) \Big)$$
+    Now, we carry out the energy integral over one period only (since $g(t)$ is periodic evaluating the integral from $-\infty$ to $\infty$ would not lead to a convergent result):
+    $$\begin{align}E_g &= \int^{T_0}_0 g^2(t) \: \text{d}t = \int^{\frac{2\pi}{\omega_0}}_0 g^2(t) \: \text{d}t \\\\
+&= \frac{C^2}{2} \Bigg[\int^{\frac{2\pi}{\omega_0}}_0 1 \: \text{d}t + \int^{\frac{2\pi}{\omega_0}}_0 \cos(2\omega_0 t + 2\theta) \: \text{d}t \Bigg] \\\\
+&= \frac{C^2}{2} \Bigg[\frac{2\pi}{\omega_0} + \frac{1}{2\omega_0}\Big[\sin(2\omega_0 t + 2\theta)  \Big]_0^{\frac{2\pi}{\omega_0}}\Bigg] \\\\
+&= \frac{C^2}{2} \Bigg[\frac{2\pi}{\omega_0} + \frac{1}{2\omega_0}\Big[\sin(2\omega_0 \frac{2\pi}{\omega_0} + 2\theta) - \sin(2\theta) \Big]\Bigg] \\\\
+&= \frac{C^2}{2} \Bigg[\frac{2\pi}{\omega_0} + \frac{1}{2\omega_0}\Big[\sin(4\pi + 2\theta) - \sin(2\theta) \Big]\Bigg] \\\\
+&= \frac{C^2}{2} \Bigg[\frac{2\pi}{\omega_0} + \frac{1}{2\omega_0}\Big[\sin(2\theta) - \sin(2\theta) \Big]\Bigg] \\\\
+&= \frac{C^2}{2}\frac{2\pi}{\omega_0} \\\\
+&= \frac{C^2T_0}{2} \end{align}$$
+
+Now we find the power by averaging the energy over one period.
+
+$$P_g = \frac{E_g}{T_0} = \frac{1}{T_0} \cdot \frac{C^2T_0}{2} = \frac{C^2}{2} $$
+Hence, the power is just the half the amplitude squared.
+</p>
+
+<p><a href="../index.html">← Back</a></p>
+</body>
+</html>

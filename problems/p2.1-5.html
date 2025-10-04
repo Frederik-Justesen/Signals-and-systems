@@ -29,8 +29,30 @@
 </p>
 <p>
     The mirrored version is clearly an even function (assuming period of $4$), hence the power of $g(t)$ becomes
-    $$ \begin{align}P_g &= \frac{1}{4} \int_0^4 g^2(t) \: \text{d}t = \frac{1}{4} 2\int_0^2 \big(t^3\big)^2 \: \text{d}t \\\\ 
+    $$ \begin{align}P_g &= \frac{1}{4} \int_0^4 g^2(t) \: \text{d}t = \frac{2}{4}\int_0^2 \big(t^3\big)^2 \: \text{d}t \\\\ 
     &= \frac{2^7}{2\cdot 7} = \frac{64}{7}\end{align}$$
+
+    For $(\textbf{a})$, we recognize that because the sign doesn't matter 
+    $$P_{-g} = P_g = \frac{64}{7} $$
+    The rms value
+    $$g_\text{rms} = \sqrt{P_g} = 3.02$$
+
+    For $(\textbf{b})$, the integral is simply the same as for $g(t)$, now simply scaled by $1.5^2$
+    $$P_{1.5g} = \frac{2}{4}\int_0^2 \big(1.5t^3\big)^2 \: \text{d}t = 1.5^2 \cdot  \frac{2^7}{2\cdot 7} = 20.571 $$
+    The rms value
+    $$(1.5g)_\text{rms} = \sqrt{P_{1.5g}} = 4.53$$
+
+    For $(\textbf{c})$, time-inversion obviously does not affect the power because $g(-t) = (-t)^3$, but $g^2(-t) = \big((-t)^3\big)^2 = t^6$.
+    The integration limits do change to $-4$ (lower) and $0$ (upper) but the power remains the same as in $(\textbf{a})$, as the signal is periodic.
+    The rms value also remains the same as in $(\textbf{a})$.
+    $$$$
+    For $(\textbf{d})$, time scaling does affect the $\textbf{energy}$ of the signal, but not the power. This is because the integration limits change, so the result from the energy integral changes.
+    But in the power calculation, the period also changes along with the scaling factor in front of the integral, cancelling out the effect of the altered integration limits.
+    $$ \begin{align}P_{g_{(1.5t)}} &= \frac{2}{4/1.5}\int_0^{2/1.5}\Big([1.5t]^3 \Big)^2 \: \text{d}t \\\\
+    &= 1.5^6\frac{2}{2.66}\int_0^{2/1.5} t^6 \: \text{d}t \\\\
+    &= \frac{64}{7} \end{align}$$
+    The rms value
+    $$g(1.5t)_\text{rms} = \sqrt{P_{g(1.5t)}} = 3.02$$
 </p>
 <p><a href="../index.html">← Back</a></p>
 </body>
