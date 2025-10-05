@@ -1,0 +1,52 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8">
+<title>Problem 2.1-7</title>
+<script>
+  MathJax = { tex:{inlineMath:[['$','$'],['\\(','\\)']], displayMath:[['$$','$$'],['\\[','\\]']]}};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js"></script>
+<style>body{max-width:800px;margin:2rem auto;padding:0 1rem;font:16px/1.6 system-ui,sans-serif}</style>
+</head>
+<body>
+<h1>Problem 2.1-7</h1>
+<p>
+    $\textbf{Question}:\\$ Show that if $\omega_1 = \omega_2$, the power of $g(t) = C_1 \cos(\omega_1 t + \theta_1) + C_2 \cos(\omega_2 t + \theta_2)$ is 
+    $$\frac{1}{2}\big[ C_1^2 + C_2^2 + 2C_1C_2\cos(\theta_1 - \theta_2) \big]$$
+    which is not equal to $\frac{1}{2}[C_1^2 + C_2^2]$.
+</p>
+
+<p>
+    $\textbf{Answer}:\\$ Let's first evaluate $g^2(t)$.
+    $$\begin{align} g^2(t) &= \big[C_1 \cos(\omega_1 t + \theta_1) + C_2 \cos(\omega_2 t + \theta_2)\big]^2 \\\\
+&= C_1^2\cos^2(\omega_1 t + \theta_1) + C_2^2\cos^2(\omega_2 t + \theta_2) + C_1C_2\cos(\omega_1 t + \theta_1)\cos(\omega_2 t + \theta_2) \end{align}$$
+
+In this case, we are to assume that $\omega_1 = \omega_2 = \omega$ so the expression reduces to
+
+$$g^2(t) = \cos^2(\omega t) \Big[C_1^2 + C_2^2 \Big] + C_1C_2\cos(\omega t+\theta_1)\cos(\omega t + \theta_2)$$
+
+Now we use the identity that $\cos(a)\cos(b) = \frac{1}{2}\Big[ \cos(a-b) + \cos(a+b) \Big]$ to obtain
+
+
+$$g^2(t) = \cos^2(\omega t) \Big[C_1^2 + C_2^2 \Big] + \frac{C_1C_2}{2}\Big[\cos(\theta_1-\theta_2) + \cos(2\omega t + \theta_1 + \theta_2) \Big]$$
+
+Because $g(t)$ is periodic with period $T_0 = \frac{2\pi}{\omega_0}$ we can calculate the energy for one period.
+
+$$E_g = \Bigg(\int_0^{\frac{2\pi}{\omega_0}} \cos^2(\omega t) \Big[C_1^2 + C_2^2 \Big] \: \text{d}t \Bigg) + \Bigg( \frac{C_1C_2}{2}\int_0^{\frac{2\pi}{\omega_0}} \cos(\theta_1-\theta_2)  \: \text{d}t \Bigg) + \Bigg( \frac{C_1C_2}{2}\int_0^{\frac{2\pi}{\omega_0}} \cos(2\omega t + \theta_1 + \theta_2)  \: \text{d}t \Bigg) $$
+
+For the first integral, we already know from <a href="../problems/p2.1-6.html">Problem 2.1-6</a> that it yields $\frac{(C_1^2+C_2^2)T_0}{2}$. The second integral integrates a constant function over an interval $0$ to $T_0$, so it yields $\frac{C_1C_2T_0}{2}\cos(\theta_1 - \theta_2)$. 
+The last integral is the area under a cosine wave over two periods which yields zero. So the energy of $g(t)$ over one period is 
+
+$$E_g = \frac{(C_1^2+C_2^2)T_0}{2} + \frac{C_1C_2T_0}{2}\cos(\theta_1 - \theta_2)$$
+
+To find the power we average over one period, $T_0$.
+
+$$\begin{align}P_g &= \frac{E_g}{T_0} = \frac{1}{T_0} \bigg[\frac{(C_1^2+C_2^2)T_0}{2} + \frac{C_1C_2T_0}{2}\cos(\theta_1 - \theta_2) \bigg] \\\\
+&= \frac{1}{2}\big[ C_1^2 + C_2^2 + 2C_1C_2\cos(\theta_1 - \theta_2) \big] \end{align}$$
+
+Note that if $\theta_1 = \theta_2 \pm \frac{\pi}{2}$, then the cosine term in the power expression becomes $\cos(\pm \frac{\pi}{2}) = 0$, and the power becomes $\frac{1}{2}\big[ C_1^2 + C_2^2 \big]$. 
+In other words, if the two cosine waves are orthogonal to each other, the power of their sum is equal to the sum of their individual powers.
+</p>
+
+<p><a href="../index.html">← Back</a></p>
+</body>
+</html>

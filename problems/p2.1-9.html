@@ -1,0 +1,65 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8">
+<title>Problem 2.1-9</title>
+<script>
+  MathJax = { tex:{inlineMath:[['$','$'],['\\(','\\)']], displayMath:[['$$','$$'],['\\[','\\]']]}};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js"></script>
+<style>body{max-width:800px;margin:2rem auto;padding:0 1rem;font:16px/1.6 system-ui,sans-serif}</style>
+</head>
+<body>
+<h1>Problem 2.1-9</h1>
+<p>
+    $\textbf{Question}:\\$ Determine the power for the following signals.
+    $$\begin{align}(\textbf{a}) \quad g_a(t) &= 5 \cos\left(300\pi t + \frac{\pi}{6} \right) \\\\
+    (\textbf{b}) \quad g_b(t) &= 5 \cos(100\pi t) + 2\sin(200\pi t) \\\\
+    (\textbf{c}) \quad g_c(t) &= 5 \cos\left(100\pi t + \frac{\pi}{3} \right) + 2\sin(200\pi t) \\\\
+    (\textbf{d}) \quad g_d(t) &= 5 \sin(55t)\sin(\pi t)\\\\
+    (\textbf{e}) \quad g_e(t) &= \Big[10 \sin(5t)\cos(10t) \Big]u(t) \\\\
+    (\textbf{f}) \quad g_f(t) &= e^{j\alpha t}\sin(\omega_0 t) 
+    \end{align}$$
+</p>
+
+<p>
+    $\textbf{Answer}:\\$
+    To solve these problems, we will use the results from <a href="../problems/p2.1-7.html">Problem 2.1-7</a> and <a href="../problems/p2.1-8.html">Problem 2.1-8</a>. They say that
+    $$\begin{align}\text{power} \bigg\{ C_1 \cos(\omega_1 t + \theta_1) + C_2 \cos(\omega_2 t + \theta_2) \bigg\} &= \frac{C_1^2 + C_2^2}{2} \quad \omega_1 \neq \omega_2 \tag1\\\\
+    \text{power} \bigg\{ \sum_{k=m}^n D_k e^{j\omega_k t} \bigg\} &= \sum_{k=m}^n |D_k|^2 \tag2
+    \end{align}$$
+</p>
+$(\textbf{a}) \\$
+It follows from $(1)$ that
+$$P_{g_a} = \frac{5^2}{2} = 12.5$$
+$(\textbf{b}) \\$
+Similarly
+$$P_{g_b} = \frac{5^2}{2} + \frac{2^2}{2} = 14.5 $$
+$(\textbf{c}) \\$
+Phase shifts has no influence on the power, as long as the sinusoids have different frequencies.
+$$P_{g_c} = \frac{5^2}{2} + \frac{2^2}{2} = 14.5 $$
+$(\textbf{d}) \\$
+Using that $\frac{1}{2j} \big[e^{j\theta}-e^{-j\theta}\big] = \sin(\theta)$ we obtain
+$$\begin{align}5\sin(55t)\sin(\pi t) &= 5 \cdot \frac{1}{2j} \big[ e^{j55t} - e^{-j55t} \big] \cdot  \frac{1}{2j}\big[ e^{j\pi t} - e^{-j\pi t} \big] \\\\
+&= -\frac{5}{4}\Big( e^{j\omega_1 t} + e^{j\omega_2 t} + e^{j\omega_3 t} + e^{j\omega_4 t} \Big)\end{align}$$
+
+The actual values of $\omega_1, \omega_2$ etc. don't matter because the signal is now on the form
+
+$$\sum_{k=1}^4 -\frac{5}{4} e^{j\omega_k t} $$
+Hence, the power is 
+$$P_{g_d} = \sum_{k=1}^4 \left|-\frac{5}{4} \right|^2 = 6.25$$
+
+$(\textbf{e}) \\$
+Similarly, we can show that
+$$g_e = \sum_{k=1}^{4} -\frac{10}{4} e^{j\omega_k t} u(t) $$
+Because the signal is only active for $t\geq 0$, (i.e. half the duration of a pure cosine) the power is
+$$P_{g_e} = \frac{1}{2}\sum_{k=1}^4 \left| -\frac{10}{4} \right| = 12.5$$
+
+$(\textbf{f}) \\$
+$$\begin{align}g_f &= e^{j\alpha t}\sin(\omega_0 t) = e^{j\alpha t} \frac{1}{2j} \big( e^{j\omega_0 t} - e^{-j\omega_0 t} \big) \\\\
+&= \sum_{k=1}^2 \frac{1}{2j} e^{j\omega_k t}
+\end{align}$$
+The power is thus
+$$P_{g_f} = \sum_{k=1}^2 \left| \frac{1}{2j} \right|^2 = \frac{1}{2}$$
+
+<p><a href="../index.html">← Back</a></p>
+</body>
+</html>

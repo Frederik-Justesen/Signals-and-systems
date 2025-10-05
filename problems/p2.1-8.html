@@ -1,0 +1,71 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8">
+<title>Problem 2.1-8</title>
+<script>
+  MathJax = { tex:{inlineMath:[['$','$'],['\\(','\\)']], displayMath:[['$$','$$'],['\\[','\\]']]}};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js"></script>
+<style>body{max-width:800px;margin:2rem auto;padding:0 1rem;font:16px/1.6 system-ui,sans-serif}</style>
+</head>
+<body>
+<h1>Problem 2.1-8</h1>
+<p>
+    $\textbf{Question}:\\$ If 
+    $$g(t) = \sum_{k=m}^{n} D_k e^{j\omega_k t}, \quad D_k \in \mathbb{C}, \quad \omega_k \in \mathbb{R} $$
+    show that the associated power is
+    $$P_g = \sum_{k=m}^{n} |D_k|^2 $$
+    This is called Parseval's theorem.
+</p>
+
+<p>
+    $\textbf{Answer}:\\$
+    For complex numbers, one has the identity
+$$|z|^2 = zz^\ast $$
+Applying this to $g(t)$ we get
+$$\begin{align}|g(t)|^2 &= \sum_{k=m}^n D_ke^{j\omega_kt}  \bigg[\sum_{r=m}^n D_r e^{j\omega_rt}\bigg]^\ast \\\\
+&= \sum_{k=m}^n\sum_{r=m}^n D_kD_r^\ast e^{j\omega_kt} \big(e^{j\omega_rt}\big)^\ast \\\\
+&= \sum_{k=m}^n\sum_{r=m}^n D_kD_r^\ast e^{j\omega_kt} e^{-j\omega_rt} \\\\
+&= \sum_{k=m}^n\sum_{r=m}^n D_kD_r^\ast e^{j(\omega_k - \omega_r)t} \end{align}$$
+Note that $\big(e^{j\omega_rt}\big)^\ast = e^{-j\omega_r t}$ because $\omega_r$ is real. Also note that we are allowed to group the summation signs, because both series are finite. $\\$
+
+The power of $g(t)$ is
+$$P_g = \lim_{T\to \infty} \frac{1}{T} \int_{-\frac{T}{2}}^{\frac{T}{2}} \sum_{k=m}^n\sum_{r=m}^n D_kD_r^\ast e^{j(\omega_k - \omega_r)t} \: \text{d}t $$
+
+This expression looks complicated, so let's investigate if we can simplify it.
+    Let $\Delta \omega = \omega_k -\omega_r$, then
+    
+
+$$\begin{align} P_g &= \lim_{T\to \infty} \frac{1}{T} \int_{-\frac{T}{2}}^{\frac{T}{2}} \sum_{k=m}^n\sum_{r=m}^n D_kD_r^\ast e^{j\Delta \omega t} \: \text{d}t \\\\
+&= \sum_{k=m}^n\sum_{r=m}^n \lim_{T\to \infty} \frac{1}{T}  D_kD_r^\ast \int_{-\frac{T}{2}}^{\frac{T}{2}} e^{j\Delta \omega t} \: \text{d}t \end{align}$$
+
+We are allowed to swap the integral and the summation signs, because both summations are finite. Let's focus on the integral. There are two cases. $\\$
+
+Case 1: $\Delta \omega \neq 0 \quad (k\neq r)$
+
+$$\begin{align}\int_{-\frac{T}{2}}^{\frac{T}{2}} e^{j\Delta \omega t} \: \text{d}t &= \frac{1}{j\Delta\omega} \Big[ e^{j\Delta \omega t} \Big]_{-\frac{T}{2}}^{\frac{T}{2}} \\\\
+&= \frac{1}{j\Delta\omega} \Big( e^{j\Delta \omega\frac{T}{2}} - e^{-j\Delta \omega \frac{T}{2}}  \Big)\end{align}$$
+
+Recall that $e^{j\theta} - e^{-j\theta} = 2j\sin(\theta)$:
+$$\frac{1}{j\Delta\omega} \Big( e^{j\Delta \omega\frac{T}{2}} - e^{-j\Delta \omega \frac{T}{2}}  \Big) = \frac{2j\sin(\Delta \omega \frac{T}{2})}{j\Delta \omega} $$
+Notice that this is a finite term, and that as $T\to \infty$ the power becomes zero:
+$$\lim_{T\to \infty} \frac{1}{T}D_kD_r^\ast\frac{2j\sin(\Delta \omega \frac{T}{2})}{j\Delta \omega} = 0 $$
+Hence, we can ignore the cases when $\omega_k \neq \omega_r$ in the power calculation. $\\$
+
+Case 2: $\Delta \omega = 0 \quad (k=r) \\$
+
+Here, the integral yields
+$$\int_{-\frac{T}{2}}^{\frac{T}{2}} D_kD_k^\ast e^{0} \: \text{d}t = |D_k|^2T$$
+
+The power thus becomes
+$$\lim_{T\to \infty} \frac{1}{T} |D_k|^2T = |D_k|^2$$
+
+So only when $k=r$ does the power yield a non-zero result. Hence, we should only look at these cases. The double summation turns into a single summation, and the term inside becomes $ \lim_{T\to \infty} \frac{1}{T}|D_k|^2T$.
+
+$$\begin{align} P_g &= \sum_{k=m}^n\sum_{r=m}^n \lim_{T\to \infty} \frac{1}{T}  D_kD_r^\ast \int_{-\frac{T}{2}}^{\frac{T}{2}} e^{j\Delta \omega t} \: \text{d}t\\\\
+&= \sum_{k=m}^n \lim_{T\to \infty} \frac{1}{T} |D_k|^2T \\\\
+&= \sum_{k=m}^n |D_k|^2 \end{align} $$
+</p>
+
+<p><a href="../index.html">← Back</a></p>
+</body>
+</html>
