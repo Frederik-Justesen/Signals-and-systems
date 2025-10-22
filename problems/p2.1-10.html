@@ -1,0 +1,51 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8">
+<title>Problem 2.1-10</title>
+<script>
+  MathJax = { tex:{inlineMath:[['$','$'],['\\(','\\)']], displayMath:[['$$','$$'],['\\[','\\]']]}};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js"></script>
+<style>body{max-width:800px;margin:2rem auto;padding:0 1rem;font:16px/1.6 system-ui,sans-serif}</style>
+</head>
+<body>
+<h1>Problem 2.1-10</h1>
+<p>
+    $\textbf{Question}:\\$ Find the power of the signals in the figure below.
+    <figure>
+        <img src="../figures/fig2.1-10.png" alt="fig2.1-10">
+        <figcaption>Figure taken from Lathi's "Modern digital and analog communication systems" 5th ed.</figcaption>
+    </figure>
+</p>
+
+<p>
+    $\textbf{Answer}:\\$
+    $(\textbf{a}) \\$
+    The sign of a piecewise constant function has no impact on the power. Hence, for the square wave with period $T=4$ we get
+    $$P_a = \frac{1}{4} \int_{0}^{4} (\pm 1)^2 \: \text{d}t = 1$$
+    $(\textbf{b}) \\$
+    $$P_b = \frac{1}{10\pi} \int_{-\pi}^{\pi} 1^2 \: \text{d}t = \frac{1}{5}$$
+    
+    $(\textbf{c}) \\$
+    Here, the function is $\frac{1}{2\pi}t$ with period $2\pi$. The power is
+    $$\begin{align}P_c &=  \frac{1}{2\pi} \int_{0}^{2\pi} \left(\frac{1}{2\pi}t \right)^2 \: \text{d}t \\\\
+    &= \frac{1}{(2\pi)^3} \Big[\frac{1}{3}t^3 \Big]_0^{2\pi} \\\\
+    &= \frac{1}{3} \frac{1}{(2\pi)^3} (2\pi)^3 \\\\
+    &= \frac{1}{3}\end{align}$$
+
+    $(\textbf{d}) \\$
+    When squaring this periodic function (with period $\pi$), it becomes an even function, hence we only need to integrate over half the period.
+    $$\begin{align}P_d &= \frac{2}{\pi} \int_{0}^{\pi} \left(\frac{4}{\pi}t \right)^2 \: \text{d}t \\\\
+    &= \frac{1}{2}\frac{4 \cdot 4^2}{\pi^3} \Big[ \frac{1}{3}t^3 \Big]_0^{\frac{\pi}{4}} \\\\
+    &= \frac{1}{2} \left(\frac{4}{\pi}\right)^3 \left(\frac{\pi}{4} \right)^3 \cdot \frac{1}{3} \\\\
+    &= \frac{1}{6} \end{align}$$
+
+    $(\textbf{e}) \\$
+    $$P_e = \frac{1}{3}\int_0^1 t^2 \: \text{d}t = \frac{1}{9}$$
+
+    $(\textbf{f}) \\$
+    
+</p>
+
+<p><a href="../index.html">← Back</a></p>
+</body>
+</html>

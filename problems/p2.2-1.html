@@ -1,0 +1,38 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8">
+<title>Problem 2.2-1</title>
+<script>
+  MathJax = { tex:{inlineMath:[['$','$'],['\\(','\\)']], displayMath:[['$$','$$'],['\\[','\\]']]}};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js"></script>
+<style>body{max-width:800px;margin:2rem auto;padding:0 1rem;font:16px/1.6 system-ui,sans-serif}</style>
+</head>
+<body>
+<h1>Problem 2.2-1</h1>
+<p>
+    $\textbf{Question}:\\$ Show that $e^{-at}$ starting at $-\infty$ is neither an energy signal nor a power signal for any real number $a$.
+    However, if $a$ is purely imaginary, show that it is a power signal with power $P_g = 1$ regardless of the value of $a$.
+</p>
+
+<p>
+    $\textbf{Answer}:\\$
+    If $g(t) = e^{-at}$ then $g^2(t) = e^{-2at}$. First, we compute the energy
+    $$\begin{align} E_g &= \int_{-\infty}^{\infty} e^{-2at} \: \text{d}t = -\frac{1}{2a} \Big[ e^{-2at} \Big]_{-\infty}^{\infty} \\\\
+    &= \lim_{t\to\infty} -\frac{1}{2a} \Big( e^{-2at} - e^{2at} \Big) = \infty \quad \text{because} \quad e^{2at} \to \infty \quad \text{for} \quad t \to \infty \end{align}$$
+
+    For the power, we get
+
+    $$\begin{align} P_g &= \lim_{T\to\infty} \frac{1}{T} \int_{-\frac{T}{2}}^{\frac{T}{2}} e^{-2at} \: \text{d}t = \lim_{T\to\infty} -\frac{1}{2aT} \Big[ e^{-2at} \Big]_{-\frac{T}{2}}^{\frac{T}{2}} \\\\
+    &= \lim_{T\to\infty} -\frac{1}{2aT} \Big( e^{-aT} - e^{aT} \Big) = \infty \quad \text{because} \quad e^{2aT} \quad \text{grows faster than} \quad \frac{1}{2aT} \quad \text{decays} \end{align} $$
+    So for any real number $a$, $g(t) = e^{-at}$ is neither an energy nor a power signal. $\\$
+    However, if $a=j\alpha$ we have
+    $$ \begin{align}|g(t)| &= |e^{-j\alpha t}| = |\cos(\alpha t) -j\sin(\alpha t)| \\\\
+    &= \sqrt{\cos^2(\alpha t) + \sin^2(\alpha t)} = \sqrt{1} = 1 \Rightarrow |g(t)|^2 = 1 \end{align}$$
+    Now, the power becomes
+    $$\begin{align} P_g &= \lim_{T\to\infty} \frac{1}{T} \int_{-\frac{T}{2}}^{\frac{T}{2}} 1 = \lim_{T\to\infty} \frac{1}{T} \left( \frac{T}{2} + \frac{T}{2} \right) \\\\
+    &= \lim_{T\to\infty} \frac{1}{T} \cdot T = 1\end{align} $$
+</p>
+
+<p><a href="../index.html">← Back</a></p>
+</body>
+</html>
