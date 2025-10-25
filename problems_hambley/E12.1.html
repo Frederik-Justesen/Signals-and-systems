@@ -1,0 +1,37 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8">
+<title>Exercise 12.1</title>
+<script>
+  MathJax = { tex:{inlineMath:[['$','$'],['\\(','\\)']], displayMath:[['$$','$$'],['\\[','\\]']]}};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js"></script>
+<style>body{max-width:800px;margin:2rem auto;padding:0 1rem;font:16px/1.6 system-ui,sans-serif}</style>
+</head>
+<body>
+<h1>>Exercise 12.1</h1>
+<p>
+    $\textbf{Question}:\\$ A certain transistor has $\beta = 50, I_{ES} = 10^{-14} \: \text{A}, v_{CE} = 5 \: \text{V},$ and $i_E = 10 \: \text{mA}$. $\\$ 
+    Assume that $V_T = 26 \: \text{mV}$. Find $v_{BE}, v_{BC}, i_B, i_C$, and $\alpha$.
+</p>
+
+<p>
+    $\textbf{Answer}:\\$ From
+    $i_E = I_{ES} \left[ e^{\frac{v_{BE}}{V_T}} - 1 \right]$
+    we obtain
+    $$ v_{BE} = V_T \ln \left( \frac{i_E}{I_{ES}} + 1 \right) = 26 \: \text{mV} \cdot \ln \left( \frac{10 \: \text{mA}}{10^{-14} \: \text{A}} + 1 \right) = 0.718 \: \text{V}$$
+    From this, we now compute
+    $$\begin{align}v_{CE} &= v_{CB} + v_{BE} \Leftrightarrow \\\\
+    v_{CB} &= v_{CE} - v_{BE} = 5 \: \text{V} - 0.718 \: \text{V} = 4.28 \: \text{V} \\\\
+    v_{BC} &= -v_{CB} = -4.28 \: \text{V} \end{align}$$
+    From $\beta$ and $i_E$ we compute $i_B$.
+    $$\begin{align}i_E &= (\beta + 1)i_B \Leftrightarrow  \\\\
+    i_B &= \frac{i_E}{(\beta + 1)}  = \frac{10 \: \text{mA}}{51} = 0.196 \: \text{mA} \end{align}$$
+    The collector current is directly computed
+    $$i_C = i_E - i_B = 10 \: \text{mA} - 0.196 \: \text{mA} = 9.804 \: \text{mA} $$
+    Lastly, $\alpha$ is calculated from one of several relations
+    $$\alpha = \frac{\beta}{\beta + 1} = \frac{i_C}{i_E} = \frac{50}{51} = 0.980 $$
+</p>
+
+<p><a href="../index.html">← Back</a></p>
+</body>
+</html>
