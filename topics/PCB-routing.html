@@ -1,0 +1,22 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8">
+<title>PCB routing</title>
+<script>
+  MathJax = { tex:{inlineMath:[['$','$'],['\\(','\\)']], displayMath:[['$$','$$'],['\\[','\\]']]}};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js"></script>
+<style>body{max-width:800px;margin:2rem auto;padding:0 1rem;font:16px/1.6 system-ui,sans-serif}</style>
+</head><body>
+<p>
+    When routing a PCB for EMC purposes the stackup should generally follow the rule, that adjacent to a signal layer, there must be 
+    a return reference plane (power or GND plane). It is really preferable that the return reference plane be unobstructed such that the return path is as close to the 
+    signal trace as possible. A good example of a stackup is signal-gnd-gnd-signal. Here, the traces on the signal layers have an adjacent return reference plane. 
+    A bad stackup would be signal-signal-gnd-signal, because a trace on layer 1 has to couple to layer 3 via stray capacitances, causing a huge current loop
+    radiating a lot of electric and magnetic fields. Especially bad, is that the electric fields coupling to layer 3 will have to pass through layer 2 causing
+    a displacement current to flow through nets and copper pours. 
+
+    When a trace changes layers, the return current must also “via” to the new reference plane. 
+    Provide nearby ground stitching vias (or a stitching cap if changing to a power plane) tight to the signal via
+</p>
+<p><a href="../index.html">← Back</a></p>
+</body></html>
