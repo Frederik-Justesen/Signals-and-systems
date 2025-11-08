@@ -13,10 +13,21 @@
     signal trace as possible. A good example of a stackup is signal-gnd-gnd-signal. Here, the traces on the signal layers have an adjacent return reference plane. 
     A bad stackup would be signal-signal-gnd-signal, because a trace on layer 1 has to couple to layer 3 via stray capacitances, causing a huge current loop
     radiating a lot of electric and magnetic fields. Especially bad, is that the electric fields coupling to layer 3 will have to pass through layer 2 causing
-    a displacement current to flow through nets and copper pours. 
+    a small AC displacement current to flow through nets and copper pours. This uncontrolled displacement current flows to ground in whatever ways it can - not necessarily symmetrically.
 
     When a trace changes layers, the return current must also “via” to the new reference plane. 
-    Provide nearby ground stitching vias (or a stitching cap if changing to a power plane) tight to the signal via
+    Provide nearby ground stitching vias (or a stitching cap if changing to a power plane) tight to the signal via.
+
+    The adjacent return reference planes should be close to the signal layers, and far away from other return reference planes, to avoid capacitive coupling.
+    Return reference plane should never have slots or cuts in them.
+
+    When connecting sitching vias between copper pours and ground planes, avoid isolated islands that create antenna patterns. The copper pours should be connected to each other,
+    otherwise don't use pours in sections that create small isolated antenna structures.
+
+    When routing signals, don't change the width of the traces if they carry high frequency currents. A change in impedance will result in a discontinuity causing a reflection to occur.
+    
+    Keep traces a certain distance away from each other to avoid cross talk. Also avoid long traces to prevent signal degradation from happening.
+
 </p>
 <p><a href="../index.html">← Back</a></p>
 </body></html>
